@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,12 +8,14 @@ public class PlayerController : MonoBehaviour
     public bool isJumping;
     public float jumpForce;
     public float speed = 5f;
-    public float dashSpeed;
     public float dashAcceleration;
+    public float dashCooldownTime;
+    [SerializeField] private float dashCooldown;
+    public bool dash;
     public Rigidbody2D rb;
     void Update()
     {
-        GroundCheck();
+        //GroundCheck();
 
         //Jumping
         if (isGrounded && Input.GetButtonDown("Jump"))
@@ -22,23 +25,49 @@ public class PlayerController : MonoBehaviour
         
         //General movement
         float horizontal = Input.GetAxisRaw("Horizontal");
-        Vector2 direction = new Vector2(horizontal * Time.deltaTime, 0); 
-        transform.Translate(direction * speed);
+        Vector2 direction = new Vector2(horizontal * Time.deltaTime, 0);
 
-        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+        if (dash)
         {
-            if (speed < dashSpeed)
+            dashCooldown = dashCooldownTime;
+        }
+
+        if (!dash)
+        {
+            dashCooldown -= Time.deltaTime;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            Debug.Log(Input.mousePosition);
+            
+            if (dashCooldown <= 0)
             {
-                speed += dashAcceleration;
-            } else if (speed >= dashSpeed)
-            {
-                speed = 10f;
+                dash = true;
+
+                if ((Input.mousePosition.x - Screen.width/2) > 0) 
+                { 
+                    transform.localScale = new Vector2(1, 1);
+
+                    rb.AddForce(Vector2.right * dashAcceleration); 
+                }
+
+                if ((Input.mousePosition.x - Screen.width/2) < 0)
+                {
+                    transform.localScale = new Vector2(-1, 1);
+
+                    rb.AddForce(Vector2.left * dashAcceleration); 
+                }
+
+                dash = false;
+                dashCooldown = dashCooldownTime;
             }
         }
 
-        if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.RightShift))
+        if (Input.GetKeyUp(KeyCode.Mouse0))
         {
             speed = 10f;
+            dash = false;
         }
 
         if (isGrounded && horizontal > 0)
@@ -59,18 +88,15 @@ public class PlayerController : MonoBehaviour
         if (isGrounded && horizontal < 0) {
             transform.localScale = new Vector2(-1, 1);
         }
+        
+        transform.Translate(direction * speed);
     }
-    private void GroundCheck()
-    {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1.15f);
 
-        if (hit.collider != null && hit.collider.CompareTag("Tilemap"))
-        {
-            isGrounded = true;
-            isJumping = false;
-        }
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        isGrounded = true;
     }
-    
+
     private void OnCollisionExit2D(Collision2D collision)
     {
         isGrounded = false;
