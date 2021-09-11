@@ -10,9 +10,11 @@ public class PlayerController : MonoBehaviour
     public float speed = 5f;
     public float dashAcceleration;
     public float dashCooldownTime;
+    public Animator anim;
     [SerializeField] private float dashCooldown;
     public bool dash;
     public Rigidbody2D rb;
+    private bool isRunning;
     void Update()
     {
         //GroundCheck();
@@ -45,14 +47,14 @@ public class PlayerController : MonoBehaviour
             {
                 dash = true;
 
-                if ((Input.mousePosition.x - Screen.width/2) > 0) 
+                if (Input.mousePosition.x - Screen.width/2 > 0) 
                 { 
                     transform.localScale = new Vector2(1, 1);
 
                     rb.AddForce(Vector2.right * dashAcceleration); 
                 }
 
-                if ((Input.mousePosition.x - Screen.width/2) < 0)
+                if (Input.mousePosition.x - Screen.width/2 < 0)
                 {
                     transform.localScale = new Vector2(-1, 1);
 
@@ -88,7 +90,12 @@ public class PlayerController : MonoBehaviour
         if (isGrounded && horizontal < 0) {
             transform.localScale = new Vector2(-1, 1);
         }
-        
+
+        if (isGrounded)
+        {
+            anim.SetFloat("Speed", Mathf.Abs(horizontal));
+        }
+
         transform.Translate(direction * speed);
     }
 
