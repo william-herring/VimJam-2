@@ -1,40 +1,40 @@
 fileFormatVersion: 2
-guid: 457e722dc0f7f495dafe0922465afeaf
+guid: 1e6140a4f21ea4320857f05ffbf1706b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5653878121705019575
-    second: PlayerSpritesheet_0
+      213: -494361641789370676
+    second: RuinTilesTimekeeper_0
   - first:
-      213: 1335251186984836748
-    second: PlayerSpritesheet_1
+      213: 7671871904458154207
+    second: RuinTilesTimekeeper_1
   - first:
-      213: 3843040423100834259
-    second: PlayerSpritesheet_2
+      213: -1547310161806465819
+    second: RuinTilesTimekeeper_2
   - first:
-      213: 385077577419708428
-    second: PlayerSpritesheet_3
+      213: 995330502560181628
+    second: RuinTilesTimekeeper_3
   - first:
-      213: 8570058877390158369
-    second: PlayerSpritesheet_4
+      213: -3992114695895064327
+    second: RuinTilesTimekeeper_4
   - first:
-      213: 5776891531103278535
-    second: PlayerSpritesheet_5
+      213: 4849871333757715658
+    second: RuinTilesTimekeeper_5
   - first:
-      213: -8744608848720091140
-    second: PlayerSpritesheet_6
+      213: 6188910358951902411
+    second: RuinTilesTimekeeper_6
   - first:
-      213: -3512167338147644310
-    second: PlayerSpritesheet_7
+      213: 660448883467222944
+    second: RuinTilesTimekeeper_7
   - first:
-      213: -8422180100218658531
-    second: PlayerSpritesheet_8
+      213: 6208134903031860636
+    second: RuinTilesTimekeeper_8
   - first:
-      213: -6666380717595194736
-    second: PlayerSpritesheet_9
+      213: -1866032024930740050
+    second: RuinTilesTimekeeper_9
   - first:
-      213: -5902153548733592073
-    second: PlayerSpritesheet_10
+      213: 7474619916222921533
+    second: RuinTilesTimekeeper_10
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -79,7 +79,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 48
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -160,13 +160,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PlayerSpritesheet_0
+      name: RuinTilesTimekeeper_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 96
-        width: 21
-        height: 31
+        x: 6
+        y: 333
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,20 +174,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9476b68cdc36981b0800000000000000
-      internalID: -5653878121705019575
+      spriteID: ccec09eb4bca329f0800000000000000
+      internalID: -494361641789370676
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_1
+      name: RuinTilesTimekeeper_1
       rect:
         serializedVersion: 2
-        x: 26
-        y: 96
-        width: 11
-        height: 31
+        x: 57
+        y: 333
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,20 +195,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c8e562e41e3c78210800000000000000
-      internalID: 1335251186984836748
+      spriteID: fd0278b89d6f77a60800000000000000
+      internalID: 7671871904458154207
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_2
+      name: RuinTilesTimekeeper_2
       rect:
         serializedVersion: 2
-        x: 39
-        y: 96
-        width: 15
-        height: 30
+        x: 108
+        y: 333
+        width: 45
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,20 +216,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d1646c47e8355530800000000000000
-      internalID: 3843040423100834259
+      spriteID: 5e46c281b99d68ae0800000000000000
+      internalID: -1547310161806465819
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_3
+      name: RuinTilesTimekeeper_3
       rect:
         serializedVersion: 2
-        x: 55
-        y: 96
-        width: 21
-        height: 30
+        x: 156
+        y: 333
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -237,20 +237,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c08d1153402185500800000000000000
-      internalID: 385077577419708428
+      spriteID: c7de53f81df10dd00800000000000000
+      internalID: 995330502560181628
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_4
+      name: RuinTilesTimekeeper_4
       rect:
         serializedVersion: 2
-        x: 77
-        y: 96
-        width: 17
-        height: 31
+        x: 9
+        y: 282
+        width: 45
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -258,20 +258,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12af5039427fee670800000000000000
-      internalID: 8570058877390158369
+      spriteID: 9f0ee80d5d82998c0800000000000000
+      internalID: -3992114695895064327
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_5
+      name: RuinTilesTimekeeper_5
       rect:
         serializedVersion: 2
-        x: 97
-        y: 96
-        width: 11
-        height: 31
+        x: 57
+        y: 282
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -279,20 +279,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c59f518d34ab2050800000000000000
-      internalID: 5776891531103278535
+      spriteID: ac48af648443e4340800000000000000
+      internalID: 4849871333757715658
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_6
+      name: RuinTilesTimekeeper_6
       rect:
         serializedVersion: 2
-        x: 111
-        y: 96
-        width: 15
-        height: 30
+        x: 108
+        y: 282
+        width: 45
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -300,20 +300,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf72d404598e4a680800000000000000
-      internalID: -8744608848720091140
+      spriteID: bcc30146e2d63e550800000000000000
+      internalID: 6188910358951902411
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_7
+      name: RuinTilesTimekeeper_7
       rect:
         serializedVersion: 2
-        x: 2
-        y: 64
-        width: 21
-        height: 30
+        x: 156
+        y: 282
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -321,20 +321,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a6cfaf90a66424fc0800000000000000
-      internalID: -3512167338147644310
+      spriteID: 0affd53a2c26a2900800000000000000
+      internalID: 660448883467222944
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_8
+      name: RuinTilesTimekeeper_8
       rect:
         serializedVersion: 2
-        x: 25
-        y: 64
-        width: 17
-        height: 31
+        x: 9
+        y: 231
+        width: 45
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -342,20 +342,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d116a1c42d76e1b80800000000000000
-      internalID: -8422180100218658531
+      spriteID: c9d0bec5dc9b72650800000000000000
+      internalID: 6208134903031860636
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_9
+      name: RuinTilesTimekeeper_9
       rect:
         serializedVersion: 2
-        x: 2
-        y: 2
-        width: 11
-        height: 15
+        x: 57
+        y: 231
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -363,20 +363,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 09a893eae024c73a0800000000000000
-      internalID: -6666380717595194736
+      spriteID: ea8108e82c58a16e0800000000000000
+      internalID: -1866032024930740050
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpritesheet_10
+      name: RuinTilesTimekeeper_10
       rect:
         serializedVersion: 2
-        x: 14
-        y: 2
-        width: 21
-        height: 21
+        x: 108
+        y: 231
+        width: 45
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -384,8 +384,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7fd4ced4e96571ea0800000000000000
-      internalID: -5902153548733592073
+      spriteID: d3bf689263f2bb760800000000000000
+      internalID: 7474619916222921533
       vertices: []
       indices: 
       edges: []

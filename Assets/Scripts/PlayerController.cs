@@ -101,11 +101,13 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
+        isJumping = false;
         isGrounded = true;
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
+        isJumping = true;
         isGrounded = false;
     }
 }
