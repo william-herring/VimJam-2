@@ -35,6 +35,24 @@ TextureImporter:
   - first:
       213: 7474619916222921533
     second: RuinTilesTimekeeper_10
+  - first:
+      213: 5782160457085826255
+    second: RuinTilesTimekeeper_11
+  - first:
+      213: 2563026666395662444
+    second: RuinTilesTimekeeper_12
+  - first:
+      213: 1289291816649573441
+    second: RuinTilesTimekeeper_13
+  - first:
+      213: -4212449246919215763
+    second: RuinTilesTimekeeper_14
+  - first:
+      213: -46366085373501583
+    second: RuinTilesTimekeeper_15
+  - first:
+      213: 5010889508570849507
+    second: RuinTilesTimekeeper_16
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -79,7 +97,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 48
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -163,10 +181,10 @@ TextureImporter:
       name: RuinTilesTimekeeper_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 333
-        width: 48
-        height: 48
+        x: 7
+        y: 110
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,10 +202,10 @@ TextureImporter:
       name: RuinTilesTimekeeper_1
       rect:
         serializedVersion: 2
-        x: 57
-        y: 333
-        width: 48
-        height: 48
+        x: 23
+        y: 110
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,10 +223,10 @@ TextureImporter:
       name: RuinTilesTimekeeper_2
       rect:
         serializedVersion: 2
-        x: 108
-        y: 333
-        width: 45
-        height: 48
+        x: 39
+        y: 110
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,10 +244,10 @@ TextureImporter:
       name: RuinTilesTimekeeper_3
       rect:
         serializedVersion: 2
-        x: 156
-        y: 333
-        width: 48
-        height: 48
+        x: 55
+        y: 110
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,10 +265,10 @@ TextureImporter:
       name: RuinTilesTimekeeper_4
       rect:
         serializedVersion: 2
-        x: 9
-        y: 282
-        width: 45
-        height: 48
+        x: 71
+        y: 110
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -268,10 +286,10 @@ TextureImporter:
       name: RuinTilesTimekeeper_5
       rect:
         serializedVersion: 2
-        x: 57
-        y: 282
-        width: 48
-        height: 48
+        x: 87
+        y: 110
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -289,10 +307,10 @@ TextureImporter:
       name: RuinTilesTimekeeper_6
       rect:
         serializedVersion: 2
-        x: 108
-        y: 282
-        width: 45
-        height: 48
+        x: 103
+        y: 110
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -310,10 +328,10 @@ TextureImporter:
       name: RuinTilesTimekeeper_7
       rect:
         serializedVersion: 2
-        x: 156
-        y: 282
-        width: 48
-        height: 48
+        x: 7
+        y: 94
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -331,10 +349,10 @@ TextureImporter:
       name: RuinTilesTimekeeper_8
       rect:
         serializedVersion: 2
-        x: 9
-        y: 231
-        width: 45
-        height: 48
+        x: 23
+        y: 94
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -352,10 +370,10 @@ TextureImporter:
       name: RuinTilesTimekeeper_9
       rect:
         serializedVersion: 2
-        x: 57
-        y: 231
-        width: 48
-        height: 48
+        x: 39
+        y: 94
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -373,10 +391,10 @@ TextureImporter:
       name: RuinTilesTimekeeper_10
       rect:
         serializedVersion: 2
-        x: 108
-        y: 231
-        width: 45
-        height: 48
+        x: 55
+        y: 94
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -386,6 +404,132 @@ TextureImporter:
       bones: []
       spriteID: d3bf689263f2bb760800000000000000
       internalID: 7474619916222921533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RuinTilesTimekeeper_11
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 94
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc439eeec4c5e3050800000000000000
+      internalID: 5782160457085826255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RuinTilesTimekeeper_12
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 94
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c68fd507c23b19320800000000000000
+      internalID: 2563026666395662444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RuinTilesTimekeeper_13
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 94
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1444737831c74e110800000000000000
+      internalID: 1289291816649573441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RuinTilesTimekeeper_14
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 78
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d65b40b7abf5a85c0800000000000000
+      internalID: -4212449246919215763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RuinTilesTimekeeper_15
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 78
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17fdfaf7a464b5ff0800000000000000
+      internalID: -46366085373501583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RuinTilesTimekeeper_16
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 78
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e0e81f85714a8540800000000000000
+      internalID: 5010889508570849507
       vertices: []
       indices: 
       edges: []
