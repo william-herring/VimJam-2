@@ -22,9 +22,11 @@ public class PlayerController : MonoBehaviour
         //Jumping
         if (isGrounded && Input.GetButtonDown("Jump"))
         {
+            anim.SetBool("isJumping", true);
+            anim.SetTrigger("Jump");
             isJumping = true; rb.velocity = Vector2.up * jumpForce;
         }
-        
+
         //General movement
         float horizontal = Input.GetAxisRaw("Horizontal");
         Vector2 direction = new Vector2(horizontal * Time.deltaTime, 0);
@@ -101,6 +103,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
+        anim.SetBool("isJumping", false);
         isJumping = false;
         isGrounded = true;
     }
