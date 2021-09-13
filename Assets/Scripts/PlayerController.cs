@@ -48,6 +48,7 @@ public class PlayerController : MonoBehaviour
             if (dashCooldown <= 0)
             {
                 dash = true;
+                anim.SetTrigger("Dash");
 
                 if (Input.mousePosition.x - Screen.width/2 > 0) 
                 { 
