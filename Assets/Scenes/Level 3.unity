@@ -97698,9 +97698,10 @@ MonoBehaviour:
   jumpForce: 15
   speed: 10
   dashAcceleration: 1500
-  dashCooldownTime: 4
+  dashCooldownTime: 2
   anim: {fileID: 1481747187}
   dashCooldown: 0
+  climbSpeed: 6
   dash: 0
   rb: {fileID: 1481747188}
 --- !u!95 &1481747187

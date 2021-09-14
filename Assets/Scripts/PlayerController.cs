@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public float dashCooldownTime;
     public Animator anim;
     [SerializeField] private float dashCooldown;
+    [SerializeField] private float climbSpeed;
     public bool dash;
     public Rigidbody2D rb;
     private bool isRunning;
@@ -51,14 +52,14 @@ public class PlayerController : MonoBehaviour
                 dash = true;
                 anim.SetTrigger("Dash");
 
-                if (Input.mousePosition.x - Screen.width/2 > 0) 
+                if (Input.mousePosition.x - Screen.width / 2 > 0) 
                 { 
                     transform.localScale = new Vector2(1, 1);
 
                     rb.AddForce(Vector2.right * dashAcceleration); 
                 }
 
-                if (Input.mousePosition.x - Screen.width/2 < 0)
+                if (Input.mousePosition.x - Screen.width / 2 < 0)
                 {
                     transform.localScale = new Vector2(-1, 1);
 
@@ -70,7 +71,21 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyUp(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            if (Input.mousePosition.x - Screen.width / 2 > 0) 
+            { 
+                transform.localScale = new Vector2(1, 1);
+            }
+
+            if (Input.mousePosition.x - Screen.width / 2 < 0)
+            {
+                transform.localScale = new Vector2(-1, 1);
+            }
+            anim.Play("Attack");
+        }
+
+        if (Input.GetKeyUp(KeyCode.Mouse1))
         {
             speed = 10f;
             dash = false;
@@ -103,7 +118,7 @@ public class PlayerController : MonoBehaviour
         if (climbing && Input.GetKey(KeyCode.E))
         {
             rb.gravityScale = 0f;
-            transform.Translate(Vector2.up * vertical);
+            transform.Translate(Vector2.up * vertical * climbSpeed * Time.deltaTime);
         }
 
         if (climbing && Input.GetKeyUp(KeyCode.E))
@@ -135,6 +150,7 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         climbing = false;
+        rb.gravityScale = 3f;
     }
 
     private void OnCollisionExit2D(Collision2D collision)
