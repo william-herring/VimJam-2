@@ -269,6 +269,7 @@ MonoBehaviour:
   startingTime: 90
   timeText: {fileID: 1147935003}
   clock: {fileID: 1645440078}
+  hintCanvas: {fileID: 0}
 --- !u!1 &416808976
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public bool dash;
     public Rigidbody2D rb;
     private bool isRunning;
+    private bool climbing;
     void Update()
     {
         //GroundCheck();
@@ -28,6 +29,7 @@ public class PlayerController : MonoBehaviour
 
         //General movement
         float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
         Vector2 direction = new Vector2(horizontal * Time.deltaTime, 0);
 
         if (dash)
@@ -98,6 +100,18 @@ public class PlayerController : MonoBehaviour
             anim.SetFloat("Speed", Mathf.Abs(horizontal));
         }
 
+        if (climbing && Input.GetKey(KeyCode.E))
+        {
+            rb.gravityScale = 0f;
+            transform.Translate(Vector2.up * vertical);
+        }
+
+        if (climbing && Input.GetKeyUp(KeyCode.E))
+        {
+            climbing = false;
+            rb.gravityScale = 3f;
+        }
+        
         transform.Translate(direction * speed);
     }
 
@@ -108,6 +122,19 @@ public class PlayerController : MonoBehaviour
             isJumping = false;
             isGrounded = true;
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Rope"))
+        {
+            climbing = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        climbing = false;
     }
 
     private void OnCollisionExit2D(Collision2D collision)
