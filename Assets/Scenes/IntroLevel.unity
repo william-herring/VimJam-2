@@ -26673,7 +26673,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Use A and D or arrow keys to move. Click left or right to dash.
+  m_Text: Use A and D or arrow keys to move. Rigt click on the left or right of the
+    screen to dash.
 --- !u!222 &1543048842
 CanvasRenderer:
   m_ObjectHideFlags: 0

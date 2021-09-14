@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float startingTime;
     [SerializeField] private Text timeText;
     [SerializeField] private GameObject clock;
+    [SerializeField] private GameObject hintCanvas;
+    private bool hintsEnabled = false;
     private float elapsed;
 
     private void Start()
@@ -28,6 +30,19 @@ public class GameManager : MonoBehaviour
         {
             clock.GetComponent<RectTransform>().Translate(Vector2.left * 0.37f);
             elapsed = elapsed % 1f;
+        }
+    }
+
+    public void ToggleHints()
+    {
+        if (!hintsEnabled)
+        {
+            hintCanvas.SetActive(true);
+            hintsEnabled = true;
+        } else if (hintsEnabled)
+        {
+            hintCanvas.SetActive(false);
+            hintsEnabled = false;
         }
     }
 

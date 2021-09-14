@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
             dashCooldown -= Time.deltaTime;
         }
 
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse1))
         {
             Debug.Log(Input.mousePosition);
             
@@ -103,8 +103,11 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        isJumping = false;
-        isGrounded = true;
+        if (other.collider.CompareTag("Tilemap"))
+        {
+            isJumping = false;
+            isGrounded = true;
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
