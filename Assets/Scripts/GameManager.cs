@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -30,6 +31,16 @@ public class GameManager : MonoBehaviour
         {
             clock.GetComponent<RectTransform>().Translate(Vector2.left * 0.37f);
             elapsed = elapsed % 1f;
+        }
+
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            ToggleHints();
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 
