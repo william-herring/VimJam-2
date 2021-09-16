@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private AIPath path;
     [SerializeField] private float searchRadius;
     [SerializeField] private Collider2D playerCollider;
+    public int health = 2; 
 
     private void Update()
     {
@@ -33,6 +34,16 @@ public class Enemy : MonoBehaviour
         else
         {
             path.enabled = false;
+        }
+    }
+
+    public void DoDamage(int amount)
+    {
+        health -= amount;
+        
+        if (health <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 

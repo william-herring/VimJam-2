@@ -10,15 +10,26 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Text timeText;
     [SerializeField] private GameObject clock;
     [SerializeField] private GameObject hintCanvas;
+    private static float levelEnterTime;
+    private static bool restart;
     private bool hintsEnabled = false;
     private float elapsed;
 
     private void Start()
     {
+        if (restart)
+        {
+            restart = false;
+            _timer = levelEnterTime;
+        }
+        
         if (_timer == 0f)
         {
             _timer = startingTime;
+            levelEnterTime = _timer;
         }
+        
+        levelEnterTime = _timer;
     }
 
     private void Update()
@@ -29,7 +40,7 @@ public class GameManager : MonoBehaviour
 
         if (elapsed > 1f)
         {
-            clock.GetComponent<RectTransform>().Translate(Vector2.left * 0.37f);
+            clock.GetComponent<RectTransform>().Translate(Vector2.left * 1.1f);
             elapsed = elapsed % 1f;
         }
 
@@ -40,8 +51,14 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            RestartLevel();
         }
+    }
+
+    public void RestartLevel()
+    {
+        restart = true;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void ToggleHints()
