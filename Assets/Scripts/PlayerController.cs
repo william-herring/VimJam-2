@@ -13,13 +13,14 @@ public class PlayerController : MonoBehaviour
     public Animator anim;
     [SerializeField] private float dashCooldown;
     [SerializeField] private float climbSpeed;
+    [SerializeField] private LayerMask mask;
     public bool dash;
     public Rigidbody2D rb;
     private bool isRunning;
     private bool climbing;
     void Update()
     {
-        //GroundCheck();
+        GroundCheck();
 
         //Jumping
         if (isGrounded && Input.GetButtonDown("Jump"))
@@ -130,12 +131,18 @@ public class PlayerController : MonoBehaviour
         transform.Translate(direction * speed);
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void GroundCheck()
     {
-        if (other.collider.CompareTag("Tilemap"))
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 2, mask);
+        
+        if (hit.collider != null && hit.collider.CompareTag("Tilemap"))
         {
             isJumping = false;
             isGrounded = true;
+        } else if (hit.collider == null)
+        {
+            isJumping = true;
+            isGrounded = false;
         }
     }
 
@@ -152,10 +159,5 @@ public class PlayerController : MonoBehaviour
         climbing = false;
         rb.gravityScale = 3f;
     }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        isJumping = true;
-        isGrounded = false;
-    }
+    
 }
