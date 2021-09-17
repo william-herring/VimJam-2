@@ -39773,9 +39773,9 @@ MonoBehaviour:
   rb: {fileID: 1481747188}
   deathScreen: {fileID: 134909026}
   hearts:
-  - {fileID: 1838881182}
-  - {fileID: 1231292792}
   - {fileID: 457092787}
+  - {fileID: 1231292792}
+  - {fileID: 1838881182}
   fullHeart: {fileID: -4043677901100987244, guid: 50d65fa8bb1e34a019354c4ce7438fe9, type: 3}
   halfHeart: {fileID: 7740790369339361415, guid: 50d65fa8bb1e34a019354c4ce7438fe9, type: 3}
 --- !u!95 &1481747187

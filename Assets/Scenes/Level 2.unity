@@ -56771,8 +56771,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: 4adeaf2d2b1c7417e89f026626d8264f, type: 3}
-  m_Color: {r: 1, g: 0.4009434, b: 0.4009434, a: 1}
+  m_Sprite: {fileID: 6664669106136955668, guid: 50d65fa8bb1e34a019354c4ce7438fe9, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -56791,7 +56791,7 @@ Transform:
   m_GameObject: {fileID: 795822255}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -29.42, y: 19.49, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
@@ -107679,9 +107679,9 @@ MonoBehaviour:
   rb: {fileID: 1481747188}
   deathScreen: {fileID: 1959451116}
   hearts:
-  - {fileID: 1267848283}
-  - {fileID: 875818782}
   - {fileID: 882110740}
+  - {fileID: 875818782}
+  - {fileID: 1267848283}
   fullHeart: {fileID: -4043677901100987244, guid: 50d65fa8bb1e34a019354c4ce7438fe9, type: 3}
   halfHeart: {fileID: 7740790369339361415, guid: 50d65fa8bb1e34a019354c4ce7438fe9, type: 3}
 --- !u!95 &1481747187
