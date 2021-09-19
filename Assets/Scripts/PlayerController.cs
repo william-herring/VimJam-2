@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rb;
     private bool isRunning;
     private bool climbing;
+    private float ropeX;
 
     [SerializeField] private GameObject deathScreen;
     [SerializeField] private GameObject[] hearts;
@@ -89,7 +90,7 @@ public class PlayerController : MonoBehaviour
             if (Input.mousePosition.x - Screen.width / 2 > 0) 
             { 
                 transform.localScale = new Vector2(1, 1);
-                RaycastHit2D hit = Physics2D.CircleCast(transform.position, 3, Vector2.right * 2, LayerMask.NameToLayer("Enemy"));
+                RaycastHit2D hit = Physics2D.CircleCast(transform.position, 3, Vector2.right * 2, 6);
                 Debug.Log(hit.collider.name);
 
                 if (hit.collider != null)
@@ -105,7 +106,7 @@ public class PlayerController : MonoBehaviour
             {
                 transform.localScale = new Vector2(-1, 1);
                 
-                RaycastHit2D hit = Physics2D.CircleCast(transform.position, 3, Vector2.right * 2, LayerMask.NameToLayer("Enemy"));
+                RaycastHit2D hit = Physics2D.CircleCast(transform.position, 3, Vector2.right * 2, 6);
                 Debug.Log(hit.collider.name);
 
                 if (hit.collider != null)
@@ -151,6 +152,8 @@ public class PlayerController : MonoBehaviour
         if (climbing && Input.GetKey(KeyCode.E))
         {
             rb.gravityScale = 0f;
+            anim.SetFloat("Speed", 0f);
+            transform.position = new Vector3(ropeX, transform.position.y, transform.position.z);
             transform.Translate(Vector2.up * vertical * climbSpeed * Time.deltaTime);
         }
 
@@ -170,28 +173,29 @@ public class PlayerController : MonoBehaviour
 
     public void SetHearts(float lives)
     {
-        if (lives % 1 == 5)
+        if (lives == 2.5)
         {
-            if (lives == 2.5)
-            {
-                hearts[0].GetComponent<Image>().sprite = fullHeart;
-                hearts[1].GetComponent<Image>().sprite = fullHeart;
-                hearts[2].GetComponent<Image>().sprite = halfHeart;
-            }
+            hearts[0].GetComponent<Image>().sprite = fullHeart;
+            hearts[1].GetComponent<Image>().sprite = fullHeart;
+            hearts[2].GetComponent<Image>().sprite = halfHeart;
 
-            if (lives == 1.5)
-            {
-                hearts[0].GetComponent<Image>().sprite = fullHeart;
-                hearts[1].GetComponent<Image>().sprite = halfHeart;
-                hearts[2].SetActive(false);
-            }
+            return;
+        }
 
-            if (lives == 0.5)
-            {
-                hearts[0].GetComponent<Image>().sprite = halfHeart;
-                hearts[1].SetActive(false);
-                hearts[2].SetActive(false);
-            }
+        if (lives == 1.5)
+        {
+            hearts[0].GetComponent<Image>().sprite = fullHeart;
+            hearts[1].GetComponent<Image>().sprite = halfHeart;
+            hearts[2].SetActive(false);
+
+            return;
+        }
+
+        if (lives == 0.5)
+        {
+            hearts[0].GetComponent<Image>().sprite = halfHeart;
+            hearts[1].SetActive(false);
+            hearts[2].SetActive(false);
 
             return;
         }
@@ -201,6 +205,8 @@ public class PlayerController : MonoBehaviour
             hearts[0].GetComponent<Image>().sprite = fullHeart;
             hearts[1].GetComponent<Image>().sprite = fullHeart;
             hearts[2].GetComponent<Image>().sprite = fullHeart;
+
+            return;
         }
 
         if (lives == 2)
@@ -208,6 +214,8 @@ public class PlayerController : MonoBehaviour
             hearts[0].GetComponent<Image>().sprite = fullHeart;
             hearts[1].GetComponent<Image>().sprite = fullHeart;
             hearts[2].SetActive(false);
+
+            return;
         }
 
         if (lives == 1)
@@ -215,6 +223,8 @@ public class PlayerController : MonoBehaviour
             hearts[0].GetComponent<Image>().sprite = fullHeart;
             hearts[1].SetActive(false);
             hearts[2].SetActive(false);
+
+            return;
         }
         
         if (lives == 0)
@@ -225,7 +235,10 @@ public class PlayerController : MonoBehaviour
             
             GameObject.Find("Canvas").SetActive(false);
             deathScreen.SetActive(true);
+            anim.enabled = false;
             this.enabled = false;
+
+            return;
         }
     }
 
@@ -267,10 +280,18 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void Pause()
+    {
+        GameObject.Find("Canvas").SetActive(false);
+        anim.enabled = false;
+        this.enabled = false;
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Rope"))
         {
+            ropeX = other.transform.position.x;
             climbing = true;
         }
     }

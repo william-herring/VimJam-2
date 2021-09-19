@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -10,6 +11,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Text timeText;
     [SerializeField] private GameObject clock;
     [SerializeField] private GameObject hintCanvas;
+    [SerializeField] private GameObject collapseScreen;
+    private GameObject player;
     private static float levelEnterTime;
     private static bool restart;
     private bool hintsEnabled = false;
@@ -17,6 +20,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        player = GameObject.Find("Player");
+        
         if (restart)
         {
             restart = false;
@@ -44,6 +49,12 @@ public class GameManager : MonoBehaviour
             elapsed = elapsed % 1f;
         }
 
+        if (_timer <= 0f)
+        {
+            player.GetComponent<PlayerController>().Pause();
+            collapseScreen.SetActive(true);
+        }
+
         if (Input.GetKeyDown(KeyCode.H))
         {
             ToggleHints();
@@ -58,7 +69,13 @@ public class GameManager : MonoBehaviour
     public void RestartLevel()
     {
         restart = true;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        GameObject.Find("EndTrigger").GetComponent<EndTrigger>().LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void QuitToTitleScreen()
+    {
+        Destroy(GameObject.Find("Music"));
+        SceneManager.LoadScene(0);
     }
 
     public void ToggleHints()

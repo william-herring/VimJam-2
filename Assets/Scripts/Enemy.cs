@@ -10,18 +10,24 @@ public class Enemy : MonoBehaviour
     [SerializeField] private AIPath path;
     [SerializeField] private float searchRadius;
     [SerializeField] private Collider2D playerCollider;
-    public int health = 2; 
+    private Animator anim;
+    public int health = 2;
+
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
 
     private void Update()
     {
         if (destinationSetter.target.position.x > transform.position.x)
         {
-            spriteTransform.localScale = new Vector3(1, 1, 1);
+            spriteTransform.localScale = new Vector3(-1, 1, 1);
         }
         
         if (destinationSetter.target.position.x < transform.position.x)
         {
-            spriteTransform.localScale = new Vector3(-1, 1, 1);
+            spriteTransform.localScale = new Vector3(1, 1, 1);
         }
     }
 
@@ -40,11 +46,13 @@ public class Enemy : MonoBehaviour
     public void DoDamage(int amount)
     {
         health -= amount;
-        
+
         if (health <= 0)
         {
             Destroy(gameObject);
         }
+        
+        anim.Play("EnemyHit");
     }
 
     private bool IsPlayerInRange()
