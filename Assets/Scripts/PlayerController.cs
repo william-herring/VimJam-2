@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
     private bool climbing;
     private float ropeX;
 
+    public LayerMask enemyLayer;
+
     [SerializeField] private GameObject deathScreen;
     [SerializeField] private GameObject[] hearts;
     [SerializeField] private Sprite fullHeart;
@@ -90,7 +92,7 @@ public class PlayerController : MonoBehaviour
             if (Input.mousePosition.x - Screen.width / 2 > 0) 
             { 
                 transform.localScale = new Vector2(1, 1);
-                RaycastHit2D hit = Physics2D.CircleCast(transform.position, 3, Vector2.right * 2, 6);
+                RaycastHit2D hit = Physics2D.CircleCast(transform.position, 3, Vector2.right * 5, 6, enemyLayer);
                 Debug.Log(hit.collider.name);
 
                 if (hit.collider != null)
@@ -98,6 +100,9 @@ public class PlayerController : MonoBehaviour
                     if (hit.collider.CompareTag("Enemies"))
                     {
                         hit.collider.GetComponent<Enemy>().DoDamage(1);
+                    } else if (hit.collider.CompareTag("Boss"))
+                    {
+                        hit.collider.GetComponent<Enemy>().health -= 1;
                     }
                 }
             }
@@ -106,7 +111,7 @@ public class PlayerController : MonoBehaviour
             {
                 transform.localScale = new Vector2(-1, 1);
                 
-                RaycastHit2D hit = Physics2D.CircleCast(transform.position, 3, Vector2.right * 2, 6);
+                RaycastHit2D hit = Physics2D.CircleCast(transform.position, 3, Vector2.right * 5, 6, enemyLayer);
                 Debug.Log(hit.collider.name);
 
                 if (hit.collider != null)
@@ -114,6 +119,9 @@ public class PlayerController : MonoBehaviour
                     if (hit.collider.CompareTag("Enemies"))
                     {
                         hit.collider.GetComponent<Enemy>().DoDamage(1);
+                    } else if (hit.collider.CompareTag("Boss"))
+                    {
+                        hit.collider.GetComponent<Boss>().health -= 1;
                     }
                 }
             }
@@ -271,7 +279,7 @@ public class PlayerController : MonoBehaviour
             Destroy(other.gameObject);
             SetHearts(health);
         }
-        
+
         if (other.collider.tag == "Enemies")
         {
             health -= 0.5f;
@@ -293,6 +301,14 @@ public class PlayerController : MonoBehaviour
         {
             ropeX = other.transform.position.x;
             climbing = true;
+        }
+        
+        
+        if (other.tag == "Projectile")
+        {
+            health -= 0.5f;
+            Destroy(other.gameObject);
+            SetHearts(health);
         }
     }
 
