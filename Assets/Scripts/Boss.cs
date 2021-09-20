@@ -20,6 +20,7 @@ public class Boss : MonoBehaviour
     [SerializeField] private float idleTime;
     [SerializeField] private float cooldownTime;
     [SerializeField] private GameObject projectile;
+    [SerializeField] private GameManager gm;
 
     private float timer;
     private float cooldown;
@@ -34,19 +35,23 @@ public class Boss : MonoBehaviour
 
         if (health <= 0)
         {
+            gm.CompleteGame();
             anim.Play("BossDie");
             healthBar.gameObject.SetActive(false);
+
             this.enabled = false;
         }
 
         if (target.position.x > transform.position.x)
         {
             transform.localScale = new Vector3(-1, 1, 1);
+            healthBar.transform.localScale = new Vector3(0.05f, 0.05f, 1f);
         }
         
         if (target.position.x < transform.position.x)
         {
             transform.localScale = new Vector3(1, 1, 1);
+            healthBar.transform.localScale = new Vector3(-0.05f, 0.05f, 1f);
         }
 
         if (isIdle)
@@ -71,7 +76,7 @@ public class Boss : MonoBehaviour
         
         if (shootChance != 1 && cooldown <= 0)
         {
-            Shoot(2);
+            Shoot(1);
             cooldown = cooldownTime;
         }
         else

@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject clock;
     [SerializeField] private GameObject hintCanvas;
     [SerializeField] private GameObject collapseScreen;
+
+    public GameObject gameCompleteScreen;
     private GameObject player;
     private static float levelEnterTime;
     private static bool restart;
@@ -97,6 +99,13 @@ public class GameManager : MonoBehaviour
         string seconds = (time % 60).ToString("00");
 
         return $"{minutes}:{seconds}";
+    }
+
+    public void CompleteGame()
+    {
+        player.GetComponent<PlayerController>().anim.enabled = false;
+        player.GetComponent<PlayerController>().enabled = false;
+        gameCompleteScreen.SetActive(true);
     }
 
     public void AddTime(float time)
