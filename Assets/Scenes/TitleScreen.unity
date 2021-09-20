@@ -1150,8 +1150,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -2.3281, y: 24.725}
-  m_SizeDelta: {x: 421.0237, y: 94.4229}
+  m_AnchoredPosition: {x: -2.9, y: 21.3}
+  m_SizeDelta: {x: 500.5938, y: 95.2544}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1456532821
 MonoBehaviour:
@@ -1186,7 +1186,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Edge of Time
+  m_Text: The Edge of Time
 --- !u!222 &1456532822
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1743,8 +1743,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.1718502, y: 23.571266}
-  m_SizeDelta: {x: 421.0237, y: 94.4229}
+  m_AnchoredPosition: {x: 0, y: 23.2023}
+  m_SizeDelta: {x: 500.5938, y: 95.2544}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2063894028
 MonoBehaviour:
@@ -1779,7 +1779,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Edge of Time
+  m_Text: The Edge of Time
 --- !u!222 &2063894029
 CanvasRenderer:
   m_ObjectHideFlags: 0
