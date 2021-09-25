@@ -267,20 +267,20 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.collider.tag == "Spikes")
+        if (other.collider.CompareTag("Spikes"))
         {
             health = 0f;
             SetHearts(health);
         }
         
-        if (other.collider.tag == "Arrows")
+        if (other.collider.CompareTag("Arrows"))
         {
             health -= 0.5f;
             Destroy(other.gameObject);
             SetHearts(health);
         }
 
-        if (other.collider.tag == "Enemies")
+        if (other.collider.CompareTag("Enemies"))
         {
             health -= 0.5f;
             SetHearts(health);
